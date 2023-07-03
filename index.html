@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form with Dropdown and Textbox</title>
+  <style>
+    .red {
+      background-color: red;
+    }
+
+    .green {
+      background-color: green;
+    }
+
+    .blue {
+      background-color: blue;
+    }
+  </style>
+</head>
+<body>
+  <form>
+    <label for="colorSelect">Select a color:</label>
+    <select id="colorSelect" onchange="changeTextBoxColor()">
+      <option value="red">Red</option>
+      <option value="green">Green</option>
+      <option value="blue">Blue</option>
+    </select>
+    <br><br>
+    <label for="textBox">Text Box:</label>
+    <input type="text" id="textBox">
+  </form>
+
+  <script>
+    function changeTextBoxColor() {
+      const colorSelect = document.getElementById('colorSelect');
+      const textBox = document.getElementById('textBox');
+
+      const selectedColor = colorSelect.value;
+
+      textBox.classList.remove('red', 'green', 'blue');
+      textBox.classList.add(selectedColor);
+    }
+  </script>
+</body>
+</html>
